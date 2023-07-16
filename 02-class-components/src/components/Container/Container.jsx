@@ -1,9 +1,9 @@
-import React from "react";
+import React, {Component} from "react";
 import Controls from "./Controls";
 import Value from "./Value";
 import './Container.css';
 
-class Container extends React.Component{
+class Container extends Component{
     // constructor()
     // {
     //     super();

@@ -1,5 +1,7 @@
 import React from "react";
-import Container from "./components/Container/Container";
+// import Container from "./components/Container/Container";
+// import Dropdown from "./components/Dropdown/Dropdown";
+import ColorPicker from "./components/ColorPicker/ColorPicker";
 
 const colorPickerOptions = [
     { label: 'red', color: '#F44336' },
@@ -14,7 +16,9 @@ const App = () => {
     return (
         <div>
             <h1>Состояние компонента</h1>
-            <Container initialValue={0} />
+            {/* <Dropdown /> */}
+            {/* <Container initialValue={0} /> */}
+            <ColorPicker options={colorPickerOptions} />
         </div>
     )
 }
