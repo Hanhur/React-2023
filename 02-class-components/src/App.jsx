@@ -17,6 +17,7 @@ import initialTodos from './todos.json';
 class App extends Component{
     state = {
         todos: initialTodos, 
+        name: '',
     }
 
     deleteTodo = (todoId) => (
@@ -25,6 +26,10 @@ class App extends Component{
         }))
     )
 
+    hendleNameChange = (event) => {
+        this.setState({inputValue: event.currentTarget.value});
+    }
+
     render()
     {
         const {todos} = this.state;
@@ -32,10 +37,15 @@ class App extends Component{
         const completedTodoCount = todos.reduce((total, todo) => (todo.completed ? total + 1 : total), 0);
         return (
             <div>
+                <form>
+                    <label>
+                        Имя <input type="text" value={this.state.name} onChange={this.hendleNameChange}/>
+                    </label>
+                </form>
                 <h1>Состояние компонента</h1>
-                {/* <Dropdown />
-                <Container initialValue={0} />
-                <ColorPicker options={colorPickerOptions} /> */}
+                {/* <Dropdown /> */}
+                {/* <Container initialValue={0} /> */}
+                {/* <ColorPicker options={colorPickerOptions} /> */}
                 <div>
                     <p>Общее кол-во: {totaltodoCount}</p>
                     <p>Кол-во выполненных: {completedTodoCount}</p>
